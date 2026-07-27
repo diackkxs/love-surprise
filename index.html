@@ -1,20 +1,66 @@
 <!DOCTYPE html>
 <html lang="tr">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bizim Hikayemiz ❤️</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Bizim Hikayemiz ❤️</title>
 
-    <link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="style.css">
 
 </head>
 
 <body>
 
-<h1>Yakında seni şaşırtacağım... ❤️</h1>
+<div class="screen">
+
+<div class="phone">
+
+<h1>❤️</h1>
+
+<p class="subtitle">
+
+Bu sürprizi açmak için
+<br>
+PIN'i gir.
+
+</p>
+
+<div class="pin">
+
+<div class="dot" id="d1"></div>
+<div class="dot" id="d2"></div>
+<div class="dot" id="d3"></div>
+<div class="dot" id="d4"></div>
+
+</div>
+
+<div class="message" id="message"></div>
+
+<div class="keypad">
+
+<button class="key" onclick="press(1)">1</button>
+<button class="key" onclick="press(2)">2</button>
+<button class="key" onclick="press(3)">3</button>
+
+<button class="key" onclick="press(4)">4</button>
+<button class="key" onclick="press(5)">5</button>
+<button class="key" onclick="press(6)">6</button>
+
+<button class="key" onclick="press(7)">7</button>
+<button class="key" onclick="press(8)">8</button>
+<button class="key" onclick="press(9)">9</button>
+
+<button class="key" onclick="clearPin()">⌫</button>
+<button class="key" onclick="press(0)">0</button>
+<button class="key" onclick="checkPin()">✓</button>
+
+</div>
+
+</div>
+
+</div>
 
 <script src="script.js"></script>
 
 </body>
-
 </html>
