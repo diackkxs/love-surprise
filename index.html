@@ -1,208 +1,155 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="tr">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Bizim Küçük Dünyamız ♡</title>
-  <link rel="stylesheet" href="style.css" />
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Bizim Küçük Dünyamız</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <div id="heartLayer" aria-hidden="true"></div>
+  <div class="bg-hearts" aria-hidden="true"></div>
 
-  <main id="app">
-    <!-- 1: VALENTINE SORUSU -->
-    <section id="askPage" class="page active">
-      <div class="paper-shell intro-shell">
-        <div class="mini-stars"></div>
-        <div class="intro-art">
-          <img src="assets/girl-pixel.png" alt="Sevimli kız çizimi" />
+  <main>
+    <section class="page active" id="welcome">
+      <div class="card split">
+        <div class="character-box">
+          <img src="assets/girl.png" alt="Gülümseyen kız">
         </div>
-
-        <div class="intro-copy">
-          <span class="tiny-label">for my valentine</span>
+        <div class="content-box">
+          <span class="eyebrow">FOR MY VALENTINE</span>
           <h1>Merhaba sevgilim,<br>devam edelim mi?</h1>
           <p>Senin için hazırladığım küçük dünyaya girmeye hazır mısın?</p>
 
-          <div class="choice-grid">
-            <button class="choice-card yes-card" data-go="pinPage">
-              <span class="card-illustration teddy">
-                <span class="ear left"></span><span class="ear right"></span>
-                <span class="face"></span><span class="nose"></span>
-              </span>
-              <strong>Evet</strong>
-              <small>Birlikte devam edelim</small>
+          <div class="actions">
+            <button class="choice yes" data-page="pin">
+              <span class="icon teddy-icon"></span>
+              <span><b>Evet</b><small>Birlikte devam edelim</small></span>
             </button>
-
-            <button class="choice-card no-card" id="noButton">
-              <span class="card-illustration broken-heart">
-                <span class="half left-half"></span>
-                <span class="half right-half"></span>
-              </span>
-              <strong>Hayır</strong>
-              <small>Yanlış cevabı seçme :)</small>
+            <button class="choice no" data-page="wrong">
+              <span class="icon broken-icon"></span>
+              <span><b>Hayır</b><small>Yanlış cevabı seçme :)</small></span>
             </button>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- HAYIR SAYFASI -->
-    <section id="wrongPage" class="page">
-      <div class="paper-shell wrong-shell">
-        <img class="wrong-girl" src="assets/girl-reference.jpeg" alt="Kızgın ama sevimli kız" />
-        <div class="wrong-copy">
-          <span class="tiny-label">oops...</span>
+    <section class="page" id="wrong">
+      <div class="card split">
+        <div class="character-box">
+          <img src="assets/girl-angry.jpeg" alt="Kızgın kız">
+        </div>
+        <div class="content-box">
+          <span class="eyebrow">OOPS...</span>
           <h2>Yanlış cevap sevgilim.</h2>
-          <p>Bu cevap beni biraz kızdırdı. Bir daha düşünelim mi?</p>
-          <button class="soft-button" data-go="askPage">Tekrar dene ♡</button>
+          <p>Bu cevap kabul edilmedi. Bir daha düşünelim mi?</p>
+          <button class="pill" data-page="welcome">Tekrar dene ♡</button>
         </div>
       </div>
     </section>
 
-    <!-- 2: PIN SAYFASI -->
-    <section id="pinPage" class="page">
-      <div class="paper-shell pin-shell">
-        <div class="pin-character">
-          <img src="assets/girl-pixel.png" alt="Gülümseyen kız çizimi" />
-          <span class="side-note">şifreyi biliyorsun ♡</span>
+    <section class="page" id="pin">
+      <div class="card split pin-layout">
+        <div class="character-box pin-character">
+          <img src="assets/girl.png" alt="Gülümseyen kız">
+          <span class="note">Şifreyi biliyorsun ♡</span>
         </div>
 
-        <div class="phone-wrap">
-          <div id="phone" class="phone">
-            <span class="phone-speaker"></span>
-            <div class="phone-content">
-              <div class="tiny-heart-outline"></div>
-              <p class="tiny-label">our little secret</p>
-              <h2>Şifreyi gir</h2>
-              <p class="pin-sub">Bizi anlatan dört küçük rakam.</p>
+        <div class="phone">
+          <div class="speaker"></div>
+          <div class="phone-inner">
+            <span class="eyebrow">OUR LITTLE SECRET</span>
+            <h2>Şifreyi gir</h2>
+            <p>Bizi anlatan dört küçük rakam.</p>
+            <div class="dots">
+              <i></i><i></i><i></i><i></i>
+            </div>
+            <div id="pinMsg" class="pin-msg"></div>
 
-              <div class="pin-dots">
-                <span id="p1"></span><span id="p2"></span><span id="p3"></span><span id="p4"></span>
-              </div>
-              <p id="pinMessage" class="pin-message"></p>
-
-              <div class="keypad">
-                <button data-key="1">1</button><button data-key="2">2</button><button data-key="3">3</button>
-                <button data-key="4">4</button><button data-key="5">5</button><button data-key="6">6</button>
-                <button data-key="7">7</button><button data-key="8">8</button><button data-key="9">9</button>
-                <button id="deletePin">⌫</button><button data-key="0">0</button><button id="submitPin">✓</button>
-              </div>
+            <div class="keypad">
+              <button data-key="1">1</button><button data-key="2">2</button><button data-key="3">3</button>
+              <button data-key="4">4</button><button data-key="5">5</button><button data-key="6">6</button>
+              <button data-key="7">7</button><button data-key="8">8</button><button data-key="9">9</button>
+              <button id="del">⌫</button><button data-key="0">0</button><button id="ok">✓</button>
             </div>
           </div>
         </div>
-
-        <div class="floating-doodles" aria-hidden="true">
-          <span>♡</span><span>✦</span><span>♡</span><span>✧</span>
-        </div>
       </div>
     </section>
 
-    <!-- 3: FOTOĞRAF / ANI SAYFASI -->
-    <section id="memoryPage" class="page scroll-page">
-      <div class="memory-board">
-        <span class="tiny-label">our memories</span>
-        <h2>Ne çok anımız birikti…</h2>
-        <p class="memory-text">
+    <section class="page scrollable" id="memories">
+      <div class="card memory-card">
+        <span class="eyebrow">OUR MEMORIES</span>
+        <h2>Ne çok anımız birikti...</h2>
+        <p class="lead">
           Daha da birikeceğine bütün kalbimle inanıyorum.
           Hayatın bizi birbirimize denk getirmiş olmasına,
-          birbirimizin şansı olabilmemize ve bütün bu güzel anları
-          seninle paylaşabilmeme her gün yeniden mutlu oluyorum.
+          birbirimizin şansı olabilmemize ve her güzel anı seninle
+          paylaşabilmeme çok mutluyum.
         </p>
 
-        <div class="photo-collage">
-          <figure class="polaroid polaroid-a">
-            <img src="assets/couple-1.jpeg" alt="Birlikte çekildiğiniz fotoğraf" />
-            <figcaption>en sevdiğim yer: senin yanın</figcaption>
-          </figure>
-          <figure class="polaroid polaroid-b">
-            <img src="assets/couple-2.jpeg" alt="Birlikte çekildiğiniz ikinci fotoğraf" />
-            <figcaption>iyi ki biz olmuşuz</figcaption>
-          </figure>
-          <div class="scrap-note">
-            <span>♡</span>
-            <p>Seni her şeyden çok seviyorum.</p>
-          </div>
+        <div class="gallery">
+          <figure class="photo p1"><img src="assets/photo-1.jpeg" alt="Birlikte fotoğraf"><figcaption>en sevdiğim yer: senin yanın</figcaption></figure>
+          <div class="love-note">Seni her şeyden çok seviyorum ♡</div>
+          <figure class="photo p2"><img src="assets/photo-2.jpeg" alt="Birlikte fotoğraf"><figcaption>iyi ki biz olmuşuz</figcaption></figure>
         </div>
 
-        <button class="heart-button" data-go="letterPage" aria-label="Devam et">
-          <span>Devam</span>
-        </button>
+        <button class="heart-next" data-page="letter"><span>Devam</span></button>
       </div>
     </section>
 
-    <!-- 4: ZARF SAYFASI -->
-    <section id="letterPage" class="page">
-      <div class="paper-shell letter-stage">
-        <span class="tiny-label">a letter for you</span>
+    <section class="page" id="letter">
+      <div class="card centered">
+        <span class="eyebrow">A LETTER FOR YOU</span>
         <h2>Sana yazdığım küçük bir mektup var.</h2>
-
-        <button id="envelope" class="envelope" aria-label="Mektubu aç">
+        <button class="envelope" id="envelope" aria-label="Mektubu aç">
           <span class="env-back"></span>
           <span class="env-paper">SEVGİLİME</span>
           <span class="env-front"></span>
           <span class="env-flap"></span>
-          <span class="wax-heart">♡</span>
+          <span class="seal">♡</span>
         </button>
-        <p class="tap-text">Mektuba dokun.</p>
+        <p>Mektuba dokun.</p>
       </div>
     </section>
 
-    <!-- 5: AÇILMIŞ MEKTUP -->
-    <section id="openLetterPage" class="page scroll-page">
-      <article class="open-letter">
-        <span class="tiny-label dark-label">to my favorite person</span>
+    <section class="page scrollable" id="openLetter">
+      <article class="letter-paper">
+        <span class="eyebrow">TO MY FAVORITE PERSON</span>
         <h2>Sevgilim,</h2>
-        <div class="letter-copy">
-          <p>
-            Seni sevmenin hayatımdaki en güzel duygulardan biri olduğunu bilmeni istiyorum.
-            Yanımda olduğunda her şey biraz daha kolay, biraz daha sıcak ve çok daha anlamlı geliyor.
-          </p>
-          <p>
-            Birlikte geçirdiğimiz her anı, bazen en küçük ayrıntısına kadar saklamak istiyorum.
-            Çünkü seninle yaşadığım sıradan bir gün bile benim için çok özel bir hatıraya dönüşüyor.
-          </p>
-          <p>
-            Sana her baktığımda yalnızca bugünümüzü değil, birlikte biriktireceğimiz daha nice güzel günü de görüyorum.
-            İyi ki hayatımdasın. İyi ki birbirimizi bulmuşuz.
-          </p>
-        </div>
+        <p>Seni sevmenin hayatımdaki en güzel duygulardan biri olduğunu bilmeni istiyorum. Yanımda olduğunda her şey biraz daha kolay, biraz daha sıcak ve çok daha anlamlı geliyor.</p>
+        <p>Birlikte geçirdiğimiz her anı saklamak istiyorum. Çünkü seninle yaşadığım sıradan bir gün bile benim için çok özel bir hatıraya dönüşüyor.</p>
+        <p>Sana her baktığımda yalnızca bugünümüzü değil, birlikte biriktireceğimiz daha nice güzel günü de görüyorum. İyi ki hayatımdasın. İyi ki birbirimizi bulmuşuz.</p>
         <p class="signature">Seni her şeyden çok seven ben ♡</p>
-        <button class="soft-button" data-go="jarPage">Bir sürpriz daha var</button>
+        <button class="pill" data-page="jar">Bir sürpriz daha var</button>
       </article>
     </section>
 
-    <!-- 6: KAVANOZ -->
-    <section id="jarPage" class="page">
-      <div class="paper-shell jar-stage">
-        <span class="tiny-label">one last surprise</span>
+    <section class="page" id="jar">
+      <div class="card centered">
+        <span class="eyebrow">ONE LAST SURPRISE</span>
         <h2>Kalplerle dolu kavanoza dokun.</h2>
-
-        <button id="jarButton" class="jar" aria-label="Kalp kavanozunu aç">
-          <span class="jar-lid"></span>
-          <span class="jar-glass"></span>
+        <button class="jar" id="jarBtn" aria-label="Kavanozu aç">
+          <span class="lid"></span>
+          <span class="glass"></span>
           <span class="jar-label">for you</span>
-          <span class="jar-heart h1"></span>
-          <span class="jar-heart h2"></span>
-          <span class="jar-heart h3"></span>
-          <span class="jar-heart h4"></span>
-          <span class="jar-heart h5"></span>
+          <i class="jh j1"></i><i class="jh j2"></i><i class="jh j3"></i><i class="jh j4"></i><i class="jh j5"></i>
         </button>
-        <p class="tap-text">Biraz titriyor… içinde çok fazla sevgi var.</p>
+        <p>Biraz titriyor... içinde çok fazla sevgi var.</p>
       </div>
-      <div id="heartExplosion" aria-hidden="true"></div>
+      <div id="burst"></div>
     </section>
 
-    <!-- 7: FİNAL -->
-    <section id="finalPage" class="page">
-      <div class="final-card">
-        <span class="tiny-label">always us</span>
-        <div class="final-photo-stack">
-          <img src="assets/couple-1.jpeg" alt="Birlikte fotoğrafınız" />
-          <img src="assets/couple-2.jpeg" alt="Birlikte ikinci fotoğrafınız" />
+    <section class="page" id="final">
+      <div class="card centered final-card">
+        <span class="eyebrow">ALWAYS US</span>
+        <div class="final-photos">
+          <img src="assets/photo-1.jpeg" alt="">
+          <img src="assets/photo-2.jpeg" alt="">
         </div>
         <h2>Seni çok seviyorum.</h2>
         <p>Bugün, yarın ve birlikte geçireceğimiz bütün güzel günlerde.</p>
-        <button id="restartButton" class="soft-button">Baştan izle</button>
+        <button class="pill" id="restart">Baştan izle</button>
       </div>
     </section>
   </main>
