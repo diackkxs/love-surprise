@@ -2,40 +2,28 @@
 <html lang="tr">
 <head>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
   <title>Bizim Küçük Dünyamız</title>
   <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
   <div class="bg-hearts" aria-hidden="true"></div>
 
   <main>
-
     <section class="page active" id="welcome">
       <div class="card split">
-
         <div class="character-box">
           <img src="assets/girl.png" alt="Gülümseyen kız">
         </div>
 
         <div class="content-box">
           <span class="eyebrow">FOR MY VALENTINE</span>
-
-          <h1>
-            Merhaba sevgilim,<br>
-            devam edelim mi?
-          </h1>
-
-          <p>
-            Senin için hazırladığım küçük dünyaya girmeye hazır mısın?
-          </p>
+          <h1>Merhaba sevgilim,<br>devam edelim mi?</h1>
+          <p>Senin için hazırladığım küçük dünyaya girmeye hazır mısın?</p>
 
           <div class="actions">
-
             <button class="choice yes" data-page="pin">
               <span class="icon teddy-icon"></span>
-
               <span>
                 <b>Evet</b>
                 <small>Birlikte devam edelim</small>
@@ -44,48 +32,33 @@
 
             <button class="choice no" data-page="wrong">
               <span class="icon broken-icon"></span>
-
               <span>
                 <b>Hayır</b>
                 <small>Yanlış cevabı seçme :)</small>
               </span>
             </button>
-
           </div>
         </div>
-
       </div>
     </section>
 
-
     <section class="page" id="wrong">
       <div class="card split">
-
         <div class="character-box">
           <img src="assets/girl-angry.jpeg" alt="Kızgın kız">
         </div>
 
         <div class="content-box">
           <span class="eyebrow">OOPS...</span>
-
           <h2>Yanlış cevap sevgilim.</h2>
-
-          <p>
-            Bu cevap kabul edilmedi. Bir daha düşünelim mi?
-          </p>
-
-          <button class="pill" data-page="welcome">
-            Tekrar dene ♡
-          </button>
+          <p>Bu cevap kabul edilmedi. Bir daha düşünelim mi?</p>
+          <button class="pill" data-page="welcome">Tekrar dene ♡</button>
         </div>
-
       </div>
     </section>
 
-
     <section class="page" id="pin">
       <div class="card split pin-layout">
-
         <div class="character-box pin-character">
           <img src="assets/girl.png" alt="Gülümseyen kız">
           <span class="note">Şifreyi biliyorsun ♡</span>
@@ -96,18 +69,11 @@
 
           <div class="phone-inner">
             <span class="eyebrow">OUR LITTLE SECRET</span>
-
             <h2>Şifreyi gir</h2>
-
-            <p>
-              Bizi anlatan dört küçük rakam.
-            </p>
+            <p>Bizi anlatan dört küçük rakam.</p>
 
             <div class="dots">
-              <i></i>
-              <i></i>
-              <i></i>
-              <i></i>
+              <i></i><i></i><i></i><i></i>
             </div>
 
             <div id="pinMsg" class="pin-msg"></div>
@@ -129,19 +95,14 @@
               <button data-key="0">0</button>
               <button id="ok">✓</button>
             </div>
-
           </div>
         </div>
-
       </div>
     </section>
 
-
     <section class="page scrollable" id="memories">
       <div class="card memory-card">
-
         <span class="eyebrow">OUR MEMORIES</span>
-
         <h2>Ne çok anımız birikti...</h2>
 
         <p class="lead">
@@ -152,13 +113,9 @@
         </p>
 
         <div class="gallery">
-
           <figure class="photo p1">
             <img src="assets/photo-1.jpeg" alt="Birlikte fotoğraf">
-
-            <figcaption>
-              en sevdiğim yer: senin yanın
-            </figcaption>
+            <figcaption>en sevdiğim yer: senin yanın</figcaption>
           </figure>
 
           <div class="love-note">
@@ -167,36 +124,22 @@
 
           <figure class="photo p2">
             <img src="assets/photo-2.jpeg" alt="Birlikte fotoğraf">
-
-            <figcaption>
-              iyi ki biz olmuşuz
-            </figcaption>
+            <figcaption>iyi ki biz olmuşuz</figcaption>
           </figure>
-
         </div>
 
         <button class="heart-next" data-page="letter">
           <span>Devam</span>
         </button>
-
       </div>
     </section>
 
-
     <section class="page" id="letter">
       <div class="card centered">
-
         <span class="eyebrow">A LETTER FOR YOU</span>
+        <h2>Sana yazdığım küçük bir mektup var.</h2>
 
-        <h2>
-          Sana yazdığım küçük bir mektup var.
-        </h2>
-
-        <button
-          class="envelope"
-          id="envelope"
-          aria-label="Mektubu aç"
-        >
+        <button class="envelope" id="envelope" aria-label="Mektubu aç">
           <span class="env-back"></span>
           <span class="env-paper">SEVGİLİME</span>
           <span class="env-front"></span>
@@ -205,16 +148,12 @@
         </button>
 
         <p>Mektuba dokun.</p>
-
       </div>
     </section>
 
-
     <section class="page scrollable" id="openLetter">
       <article class="letter-paper">
-
         <span class="eyebrow">TO MY FAVORITE PERSON</span>
-
         <h2>Sevgilim,</h2>
 
         <p>
@@ -242,25 +181,15 @@
         <button class="pill" data-page="jar">
           Bir sürpriz daha var
         </button>
-
       </article>
     </section>
 
-
     <section class="page" id="jar">
       <div class="card centered">
-
         <span class="eyebrow">ONE LAST SURPRISE</span>
+        <h2>Kalplerle dolu kavanoza dokun.</h2>
 
-        <h2>
-          Kalplerle dolu kavanoza dokun.
-        </h2>
-
-        <button
-          class="jar"
-          id="jarBtn"
-          aria-label="Kavanozu aç"
-        >
+        <button class="jar" id="jarBtn" aria-label="Kavanozu aç">
           <span class="lid"></span>
           <span class="glass"></span>
           <span class="jar-label">for you</span>
@@ -272,19 +201,14 @@
           <i class="jh j5"></i>
         </button>
 
-        <p>
-          Biraz titriyor... içinde çok fazla sevgi var.
-        </p>
-
+        <p>Biraz titriyor... içinde çok fazla sevgi var.</p>
       </div>
 
       <div id="burst"></div>
     </section>
 
-
     <section class="page" id="final">
       <div class="card centered final-card">
-
         <span class="eyebrow">ALWAYS US</span>
 
         <div class="final-photos">
@@ -301,14 +225,10 @@
         <button class="pill" id="restart">
           Baştan izle
         </button>
-
       </div>
     </section>
-
   </main>
 
-
-  <!-- Romantik arka plan müziği -->
   <audio id="bgMusic" loop preload="auto">
     <source
       src="music_for_videos-wedding-march-music-box-163683.mp3"
@@ -316,15 +236,12 @@
     >
   </audio>
 
-
-  <!-- Hayır butonuna basılınca çalacak ördek sesi -->
   <audio id="duckSound" preload="auto">
     <source
       src="ejah_music-quack-cartoon-ducks-451002.mp3"
       type="audio/mpeg"
     >
   </audio>
-
 
   <script src="script.js"></script>
 </body>
